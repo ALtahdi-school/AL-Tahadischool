@@ -1,29 +1,3940 @@
-
 <!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <title>معلومات المدرسة</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <img src="school_blog_logo_new.png" alt="شعار ثانوية التحدي الأهلية" width="150" />
-        <h1>معلومات عن مدرسة التحدي</h1>
-        <nav>
-            <a href="index.html">الرئيسية</a>
-            <a href="student.html">استعلام عن الطالب</a>
-            <a href="info.html">معلومات</a>
-        </nav>
-    </header>
+<html lang="ar" dir="rtl">
 
-    <main>
-        <section class="school-info">
-            <h2>معلومات عن ثانوية التحدي الأهلية</h2>
-            <p><strong>عنوان المدرسة:</strong> الشرقاط / جميلة / شارع البطاقة الوطنية</p>
-            <p><strong>رقم قسم الحوكمة:</strong> 07851521585</p>
-            <button onclick="window.location.href='https://www.facebook.com/share/1BtLdNdyLr/?mibextid=wwXIfr'" class="button">زيارة صفحة فيسبوك</button>
-        </section>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta name="theme-color" content="#0b63d8">
+
+    <title>المتقدمين إلى طلب التوظيف | مدرسة التحدي</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        *,
+        *::before,
+        *::after {
+
+            box-sizing: border-box;
+
+            margin: 0;
+            padding: 0;
+
+            -webkit-tap-highlight-color: transparent;
+
+        }
+
+
+        /* =====================================================
+           ROOT
+        ====================================================== */
+
+        :root {
+
+            --blue: #0b63d8;
+            --blue-dark: #0649a8;
+            --blue-light: #edf5ff;
+
+            --red: #d71920;
+
+            --green: #079455;
+            --green-light: #edfff5;
+
+            --orange: #f59e0b;
+            --orange-light: #fff8e7;
+
+            --text: #10233f;
+            --muted: #718096;
+
+            --border: #e1e8f2;
+
+            --white: #ffffff;
+
+            --bg: #f6f9fd;
+
+        }
+
+
+        /* =====================================================
+           BODY
+        ====================================================== */
+
+        html {
+
+            width: 100%;
+            min-height: 100%;
+
+            background: var(--bg);
+
+            -webkit-text-size-adjust: 100%;
+
+        }
+
+
+        body {
+
+            width: 100%;
+            min-height: 100dvh;
+
+            font-family:
+                "Cairo",
+                Arial,
+                sans-serif;
+
+            color: var(--text);
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #f6f9fd 0%,
+                    #ffffff 100%
+                );
+
+            overflow-x: hidden;
+
+            -webkit-font-smoothing: antialiased;
+
+        }
+
+
+        button,
+        input,
+        textarea,
+        select {
+
+            font-family:
+                "Cairo",
+                Arial,
+                sans-serif;
+
+        }
+
+
+        button {
+
+            cursor: pointer;
+
+        }
+
+
+        /* =====================================================
+           BACKGROUND
+        ====================================================== */
+
+        .background {
+
+            position: fixed;
+
+            inset: 0;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: 0;
+
+        }
+
+
+        .background::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+            height: 420px;
+
+            top: -220px;
+            right: -170px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(11,99,216,.14),
+                    rgba(11,99,216,.04) 45%,
+                    transparent 72%
+                );
+
+        }
+
+
+        .background::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 360px;
+            height: 360px;
+
+            bottom: -190px;
+            left: -150px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(215,25,32,.08),
+                    rgba(215,25,32,.025) 45%,
+                    transparent 72%
+                );
+
+        }
+
+
+        /* =====================================================
+           APP
+        ====================================================== */
+
+        .app {
+
+            position: relative;
+
+            z-index: 1;
+
+            width: 100%;
+
+            min-height: 100dvh;
+
+            padding:
+                25px
+                18px
+                40px;
+
+        }
+
+
+        .container {
+
+            width: 100%;
+
+            max-width: 1400px;
+
+            margin: 0 auto;
+
+        }
+
+
+        /* =====================================================
+           HEADER
+        ====================================================== */
+
+        .header {
+
+            text-align: center;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .logo-box {
+
+            width: 78px;
+            height: 78px;
+
+            margin:
+                0
+                auto
+                10px;
+
+        }
+
+
+        .logo {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            border-radius: 20px;
+
+        }
+
+
+        .logo-fallback {
+
+            width: 100%;
+            height: 100%;
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 20px;
+
+            color: white;
+
+            font-size: 32px;
+
+            font-weight: 900;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--blue),
+                    var(--blue-dark)
+                );
+
+        }
+
+
+        .school-name {
+
+            font-size: 25px;
+
+            font-weight: 900;
+
+            color: var(--blue-dark);
+
+            line-height: 1.5;
+
+        }
+
+
+        .department {
+
+            margin-top: 3px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+        }
+
+
+        .page-title {
+
+            margin-top: 18px;
+
+            font-size: 23px;
+
+            font-weight: 900;
+
+            color: var(--text);
+
+        }
+
+
+        .page-description {
+
+            margin-top: 5px;
+
+            font-size: 11px;
+
+            color: var(--muted);
+
+            font-weight: 600;
+
+        }
+
+
+        /* =====================================================
+           STATISTICS
+        ====================================================== */
+
+        .statistics {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 14px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .stat-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 20px 18px;
+
+            background: rgba(255,255,255,.97);
+
+            border:
+                1px solid
+                rgba(11,99,216,.08);
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 12px 35px
+                rgba(16,35,63,.07);
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+
+        }
+
+
+        .stat-card:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 17px 40px
+                rgba(16,35,63,.10);
+
+        }
+
+
+        .stat-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 80px;
+            height: 80px;
+
+            left: -25px;
+            bottom: -30px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(11,99,216,.06);
+
+        }
+
+
+        .stat-icon {
+
+            width: 43px;
+            height: 43px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 13px;
+
+            color: white;
+
+            font-size: 18px;
+
+            font-weight: 900;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--blue),
+                    var(--blue-dark)
+                );
+
+            margin-bottom: 11px;
+
+        }
+
+
+        .stat-card.male .stat-icon {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #1976d2,
+                    #0b4ea2
+                );
+
+        }
+
+
+        .stat-card.female .stat-icon {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #e94b6b,
+                    #c91f45
+                );
+
+        }
+
+
+        .stat-label {
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+        }
+
+
+        .stat-number {
+
+            margin-top: 2px;
+
+            font-size: 28px;
+
+            line-height: 1.2;
+
+            font-weight: 900;
+
+            color: var(--text);
+
+        }
+
+
+        /* =====================================================
+           CONTROL PANEL
+        ====================================================== */
+
+        .control-panel {
+
+            background:
+                rgba(255,255,255,.97);
+
+            border:
+                1px solid
+                rgba(11,99,216,.08);
+
+            border-radius: 22px;
+
+            padding: 17px;
+
+            box-shadow:
+                0 12px 40px
+                rgba(16,35,63,.07);
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .filter-buttons {
+
+            display: flex;
+
+            gap: 9px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .filter-button {
+
+            height: 43px;
+
+            padding:
+                0
+                18px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 12px;
+
+            background: #f8fafc;
+
+            color: #526277;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            transition:
+                .2s ease;
+
+        }
+
+
+        .filter-button:hover {
+
+            border-color:
+                var(--blue);
+
+        }
+
+
+        .filter-button.active {
+
+            color: white;
+
+            border-color:
+                var(--blue);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--blue),
+                    var(--blue-dark)
+                );
+
+            box-shadow:
+                0 7px 18px
+                rgba(11,99,216,.18);
+
+        }
+
+
+        .control-row {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 12px;
+
+            margin-top: 15px;
+
+            padding-top: 15px;
+
+            border-top:
+                1px solid
+                #edf1f6;
+
+        }
+
+
+        .selection-info {
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+        }
+
+
+        .selection-info strong {
+
+            color: var(--blue-dark);
+
+        }
+
+
+        .control-actions {
+
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+
+            justify-content: flex-end;
+
+        }
+
+
+        .action-button {
+
+            min-height: 43px;
+
+            padding:
+                0
+                16px;
+
+            border: 0;
+
+            border-radius: 12px;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            transition:
+                .2s ease;
+
+        }
+
+
+        .select-all-button {
+
+            color: #536278;
+
+            background: #f0f3f7;
+
+        }
+
+
+        .clear-button {
+
+            color: #8b2930;
+
+            background: #fff1f2;
+
+        }
+
+
+        .whatsapp-button {
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #19b96b,
+                    #078d54
+                );
+
+            box-shadow:
+                0 8px 20px
+                rgba(7,148,84,.18);
+
+        }
+
+
+        .whatsapp-button:disabled {
+
+            opacity: .45;
+
+            cursor: default;
+
+            box-shadow: none;
+
+        }
+
+
+        .action-button:active {
+
+            transform: scale(.97);
+
+        }
+
+
+        /* =====================================================
+           SEARCH
+        ====================================================== */
+
+        .search-box {
+
+            position: relative;
+
+            margin-top: 14px;
+
+        }
+
+
+        .search-box input {
+
+            width: 100%;
+
+            height: 48px;
+
+            padding:
+                0
+                45px
+                0
+                15px;
+
+            border:
+                1.5px solid
+                var(--border);
+
+            border-radius: 13px;
+
+            outline: none;
+
+            background: #f9fbfe;
+
+            color: var(--text);
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            transition:
+                .2s ease;
+
+        }
+
+
+        .search-box input:focus {
+
+            border-color:
+                var(--blue);
+
+            background: white;
+
+            box-shadow:
+                0 0 0 4px
+                rgba(11,99,216,.06);
+
+        }
+
+
+        .search-icon {
+
+            position: absolute;
+
+            right: 15px;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            color: #8b98aa;
+
+            font-size: 16px;
+
+            pointer-events: none;
+
+        }
+
+
+        /* =====================================================
+           RESULTS HEADER
+        ====================================================== */
+
+        .results-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+
+            margin:
+                18px
+                2px
+                10px;
+
+        }
+
+
+        .results-title {
+
+            font-size: 16px;
+
+            font-weight: 900;
+
+        }
+
+
+        .results-count {
+
+            padding:
+                5px
+                10px;
+
+            border-radius: 20px;
+
+            background:
+                var(--blue-light);
+
+            color:
+                var(--blue-dark);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+        }
+
+
+        /* =====================================================
+           TABLE
+        ====================================================== */
+
+        .table-wrapper {
+
+            width: 100%;
+
+            overflow-x: auto;
+
+            background: white;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 12px 40px
+                rgba(16,35,63,.07);
+
+            -webkit-overflow-scrolling: touch;
+
+        }
+
+
+        table {
+
+            width: 100%;
+
+            min-width: 1500px;
+
+            border-collapse: collapse;
+
+            text-align: right;
+
+        }
+
+
+        thead {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f4f8ff,
+                    #eef5ff
+                );
+
+        }
+
+
+        th {
+
+            padding:
+                14px
+                12px;
+
+            color:
+                #536278;
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            white-space: nowrap;
+
+            border-bottom:
+                1px solid
+                var(--border);
+
+        }
+
+
+        td {
+
+            padding:
+                13px
+                12px;
+
+            color: #35445a;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            white-space: nowrap;
+
+            border-bottom:
+                1px solid
+                #edf1f6;
+
+            vertical-align: middle;
+
+        }
+
+
+        tbody tr {
+
+            transition:
+                background .15s ease;
+
+        }
+
+
+        tbody tr:hover {
+
+            background:
+                #f8fbff;
+
+        }
+
+
+        tbody tr:last-child td {
+
+            border-bottom: 0;
+
+        }
+
+
+        .select-cell {
+
+            width: 45px;
+
+            text-align: center;
+
+        }
+
+
+        .row-checkbox {
+
+            width: 18px;
+            height: 18px;
+
+            accent-color:
+                var(--blue);
+
+            cursor: pointer;
+
+        }
+
+
+        .uid {
+
+            color:
+                var(--blue-dark);
+
+            font-weight: 900;
+
+            direction: ltr;
+
+        }
+
+
+        .name-cell {
+
+            color:
+                var(--text);
+
+            font-weight: 900;
+
+        }
+
+
+        .phone-cell {
+
+            direction: ltr;
+
+            text-align: right;
+
+            font-weight: 800;
+
+        }
+
+
+        .gender-badge,
+        .status-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-width: 55px;
+
+            padding:
+                5px
+                9px;
+
+            border-radius: 20px;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+        }
+
+
+        .gender-male {
+
+            color: #0758a8;
+
+            background: #eaf4ff;
+
+        }
+
+
+        .gender-female {
+
+            color: #b91d41;
+
+            background: #fff0f4;
+
+        }
+
+
+        .status-new {
+
+            color: #086033;
+
+            background:
+                var(--green-light);
+
+        }
+
+
+        .status-other {
+
+            color: #8a5a00;
+
+            background:
+                var(--orange-light);
+
+        }
+
+
+        .empty-state {
+
+            padding:
+                60px
+                20px;
+
+            text-align: center;
+
+            background: white;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 12px 40px
+                rgba(16,35,63,.06);
+
+        }
+
+
+        .empty-icon {
+
+            width: 65px;
+            height: 65px;
+
+            margin:
+                0
+                auto
+                14px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 20px;
+
+            color:
+                var(--blue);
+
+            background:
+                var(--blue-light);
+
+            font-size: 26px;
+
+        }
+
+
+        .empty-title {
+
+            font-size: 17px;
+
+            font-weight: 900;
+
+        }
+
+
+        .empty-description {
+
+            margin-top: 5px;
+
+            color: var(--muted);
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+        }
+
+
+        /* =====================================================
+           MOBILE CARDS
+        ====================================================== */
+
+        .mobile-list {
+
+            display: none;
+
+        }
+
+
+        .applicant-card {
+
+            background: white;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 19px;
+
+            padding: 15px;
+
+            margin-bottom: 11px;
+
+            box-shadow:
+                0 9px 27px
+                rgba(16,35,63,.06);
+
+        }
+
+
+        .card-top {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 10px;
+
+        }
+
+
+        .card-check {
+
+            flex: 0 0 auto;
+
+            padding-top: 4px;
+
+        }
+
+
+        .card-main {
+
+            flex: 1;
+
+            min-width: 0;
+
+        }
+
+
+        .card-name {
+
+            font-size: 14px;
+
+            font-weight: 900;
+
+            color: var(--text);
+
+        }
+
+
+        .card-uid {
+
+            margin-top: 2px;
+
+            color: var(--blue-dark);
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            direction: ltr;
+
+        }
+
+
+        .card-badges {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 5px;
+
+            margin-top: 8px;
+
+        }
+
+
+        .card-details {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 7px;
+
+            margin-top: 14px;
+
+            padding-top: 13px;
+
+            border-top:
+                1px solid
+                #edf1f6;
+
+        }
+
+
+        .detail {
+
+            min-width: 0;
+
+            padding: 8px;
+
+            border-radius: 10px;
+
+            background:
+                #f8fafc;
+
+        }
+
+
+        .detail.full {
+
+            grid-column:
+                1 / -1;
+
+        }
+
+
+        .detail-label {
+
+            color: #8995a6;
+
+            font-size: 8px;
+
+            font-weight: 800;
+
+        }
+
+
+        .detail-value {
+
+            margin-top: 2px;
+
+            color: #34435a;
+
+            font-size: 9px;
+
+            line-height: 1.6;
+
+            font-weight: 700;
+
+            word-break: break-word;
+
+        }
+
+
+        /* =====================================================
+           LOADING
+        ====================================================== */
+
+        .loading-screen {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 9999;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            flex-direction: column;
+
+            gap: 13px;
+
+            background:
+                rgba(255,255,255,.97);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                .25s ease;
+
+        }
+
+
+        .loading-screen.active {
+
+            opacity: 1;
+
+            visibility: visible;
+
+        }
+
+
+        .loader-circle {
+
+            width: 48px;
+            height: 48px;
+
+            border:
+                4px solid
+                #e6eefb;
+
+            border-top-color:
+                var(--blue);
+
+            border-right-color:
+                var(--red);
+
+            border-radius: 50%;
+
+            animation:
+                rotate
+                .75s
+                linear
+                infinite;
+
+        }
+
+
+        .loading-text {
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            color: var(--text);
+
+        }
+
+
+        @keyframes rotate {
+
+            to {
+
+                transform:
+                    rotate(360deg);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           TOAST
+        ====================================================== */
+
+        .toast {
+
+            position: fixed;
+
+            z-index: 10000;
+
+            bottom: 20px;
+
+            left: 50%;
+
+            transform:
+                translate(-50%, 20px);
+
+            width:
+                calc(100% - 30px);
+
+            max-width: 450px;
+
+            padding:
+                13px
+                15px;
+
+            border-radius: 14px;
+
+            color: white;
+
+            background:
+                #10233f;
+
+            text-align: center;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 12px 35px
+                rgba(16,35,63,.25);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                .25s ease;
+
+        }
+
+
+        .toast.show {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform:
+                translate(-50%, 0);
+
+        }
+
+
+        .toast.success {
+
+            background:
+                #078d54;
+
+        }
+
+
+        .toast.error {
+
+            background:
+                #b91c25;
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        .footer {
+
+            margin-top: 25px;
+
+            text-align: center;
+
+            color: #a1acb9;
+
+            font-size: 9px;
+
+            font-weight: 600;
+
+        }
+
+
+        .footer strong {
+
+            color:
+                var(--red);
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 800px) {
+
+            .app {
+
+                padding:
+                    20px
+                    12px
+                    30px;
+
+            }
+
+
+            .statistics {
+
+                gap: 8px;
+
+            }
+
+
+            .stat-card {
+
+                padding:
+                    15px
+                    12px;
+
+                border-radius: 16px;
+
+            }
+
+
+            .stat-icon {
+
+                width: 38px;
+                height: 38px;
+
+                font-size: 16px;
+
+                border-radius: 11px;
+
+            }
+
+
+            .stat-number {
+
+                font-size: 23px;
+
+            }
+
+
+            .stat-label {
+
+                font-size: 9px;
+
+            }
+
+
+            .school-name {
+
+                font-size: 20px;
+
+            }
+
+
+            .page-title {
+
+                font-size: 20px;
+
+            }
+
+
+            .control-row {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+            }
+
+
+            .control-actions {
+
+                width: 100%;
+
+                justify-content: stretch;
+
+            }
+
+
+            .action-button {
+
+                flex: 1;
+
+            }
+
+
+            .table-wrapper {
+
+                display: none;
+
+            }
+
+
+            .mobile-list {
+
+                display: block;
+
+            }
+
+        }
+
+
+        @media (max-width: 430px) {
+
+            .statistics {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+            }
+
+
+            .stat-card {
+
+                padding:
+                    13px
+                    8px;
+
+                text-align: center;
+
+            }
+
+
+            .stat-icon {
+
+                margin:
+                    0
+                    auto
+                    7px;
+
+            }
+
+
+            .stat-number {
+
+                font-size: 21px;
+
+            }
+
+
+            .stat-label {
+
+                font-size: 8px;
+
+            }
+
+
+            .filter-buttons {
+
+                display: grid;
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+            }
+
+
+            .filter-button {
+
+                padding:
+                    0
+                    5px;
+
+            }
+
+
+            .control-actions {
+
+                display: grid;
+
+                grid-template-columns:
+                    1fr 1fr;
+
+            }
+
+
+            .whatsapp-button {
+
+                grid-column:
+                    1 / -1;
+
+            }
+
+
+            .card-details {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .detail.full {
+
+                grid-column:
+                    auto;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="background"></div>
+
+
+    <!-- =====================================================
+         LOADING
+    ====================================================== -->
+
+    <div
+        class="loading-screen active"
+        id="loadingScreen"
+    >
+
+        <div class="loader-circle"></div>
+
+        <div class="loading-text">
+            جارٍ تحميل بيانات المتقدمين...
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+    ></div>
+
+
+    <!-- =====================================================
+         APP
+    ====================================================== -->
+
+    <main class="app">
+
+        <div class="container">
+
+
+            <!-- =================================================
+                 HEADER
+            ================================================== -->
+
+            <header class="header">
+
+                <div class="logo-box">
+
+                    <img
+                        src="logo.png"
+                        alt="شعار مدرسة التحدي"
+                        class="logo"
+                        id="schoolLogo"
+                    >
+
+                    <div
+                        class="logo-fallback"
+                        id="logoFallback"
+                    >
+                        ت
+                    </div>
+
+                </div>
+
+
+                <h1 class="school-name">
+                    مدرسة التحدي الأهلية المختلطة
+                </h1>
+
+
+                <div class="department">
+                    قسم الحوكمة
+                </div>
+
+
+                <h2 class="page-title">
+                    المتقدمين إلى طلب التوظيف
+                </h2>
+
+
+                <p class="page-description">
+                    إدارة ومراجعة جميع طلبات التوظيف المقدمة
+                </p>
+
+            </header>
+
+
+            <!-- =================================================
+                 STATISTICS
+            ================================================== -->
+
+            <section class="statistics">
+
+
+                <!-- ALL -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👥
+                    </div>
+
+                    <div class="stat-label">
+                        جميع المتقدمين
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="totalCount"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+
+                <!-- MALE -->
+
+                <div class="stat-card male">
+
+                    <div class="stat-icon">
+                        ♂
+                    </div>
+
+                    <div class="stat-label">
+                        الذكور
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="maleCount"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+
+                <!-- FEMALE -->
+
+                <div class="stat-card female">
+
+                    <div class="stat-icon">
+                        ♀
+                    </div>
+
+                    <div class="stat-label">
+                        الإناث
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="femaleCount"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 CONTROLS
+            ================================================== -->
+
+            <section class="control-panel">
+
+
+                <div class="filter-buttons">
+
+
+                    <button
+                        type="button"
+                        class="filter-button active"
+                        data-filter="all"
+                    >
+                        الكل
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="ذكر"
+                    >
+                        الذكور
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="أنثى"
+                    >
+                        الإناث
+                    </button>
+
+
+                </div>
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <span class="search-icon">
+                        🔎
+                    </span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="البحث بالاسم أو الكود أو رقم الهاتف..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <div class="control-row">
+
+
+                    <div class="selection-info">
+
+                        تم تحديد:
+
+                        <strong id="selectedCount">
+                            0
+                        </strong>
+
+                        متقدم
+
+                    </div>
+
+
+                    <div class="control-actions">
+
+
+                        <button
+                            type="button"
+                            class="action-button select-all-button"
+                            id="selectAllButton"
+                        >
+                            تحديد الكل
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="action-button clear-button"
+                            id="clearButton"
+                        >
+                            إلغاء التحديد
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="action-button whatsapp-button"
+                            id="whatsappButton"
+                            disabled
+                        >
+                            إرسال رسالة واتساب
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 RESULTS HEADER
+            ================================================== -->
+
+            <div class="results-header">
+
+                <div class="results-title">
+                    قائمة المتقدمين
+                </div>
+
+                <div
+                    class="results-count"
+                    id="resultsCount"
+                >
+                    0 متقدم
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 DESKTOP TABLE
+            ================================================== -->
+
+            <div
+                class="table-wrapper"
+                id="tableWrapper"
+            >
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th class="select-cell">
+                                تحديد
+                            </th>
+
+                            <th>
+                                UID
+                            </th>
+
+                            <th>
+                                الاسم
+                            </th>
+
+                            <th>
+                                الجنس
+                            </th>
+
+                            <th>
+                                المواليد
+                            </th>
+
+                            <th>
+                                رقم الهاتف
+                            </th>
+
+                            <th>
+                                عنوان السكن
+                            </th>
+
+                            <th>
+                                المرحلة
+                            </th>
+
+                            <th>
+                                المادة
+                            </th>
+
+                            <th>
+                                الشهادة
+                            </th>
+
+                            <th>
+                                الجامعة
+                            </th>
+
+                            <th>
+                                الكلية
+                            </th>
+
+                            <th>
+                                تخصص الدراسة
+                            </th>
+
+                            <th>
+                                سنة التخرج
+                            </th>
+
+                            <th>
+                                المعدل
+                            </th>
+
+                            <th>
+                                الخبرات
+                            </th>
+
+                            <th>
+                                العمل السابق
+                            </th>
+
+                            <th>
+                                موظف حكومي
+                            </th>
+
+                            <th>
+                                الحالة
+                            </th>
+
+                            <th>
+                                تاريخ التقديم
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="tableBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- =================================================
+                 MOBILE LIST
+            ================================================== -->
+
+            <div
+                class="mobile-list"
+                id="mobileList"
+            >
+            </div>
+
+
+            <!-- =================================================
+                 EMPTY
+            ================================================== -->
+
+            <div
+                class="empty-state"
+                id="emptyState"
+                style="display:none;"
+            >
+
+                <div class="empty-icon">
+                    📋
+                </div>
+
+                <div class="empty-title">
+                    لا توجد طلبات
+                </div>
+
+                <div class="empty-description">
+                    لا توجد بيانات متقدمين مطابقة للبحث أو الفلتر الحالي.
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
+
+            <footer class="footer">
+
+                جميع الحقوق محفوظة ©
+                <strong>
+                    مدرسة التحدي
+                </strong>
+
+            </footer>
+
+
+        </div>
+
     </main>
+
+
+    <!-- =====================================================
+         FIREBASE
+    ====================================================== -->
+
+    <script type="module">
+
+
+        /* =====================================================
+           FIREBASE IMPORT
+        ====================================================== */
+
+        import {
+            initializeApp
+        }
+        from
+        "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+        import {
+            getDatabase,
+            ref,
+            get
+        }
+        from
+        "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
+
+
+        /* =====================================================
+           FIREBASE CONFIG
+        ====================================================== */
+
+        const firebaseConfig = {
+
+            apiKey:
+                "AIzaSyAF6kxQoJUan19ZCbGK7djExbouYxOLGF8",
+
+            authDomain:
+                "ahtahadi-e6f61.firebaseapp.com",
+
+            databaseURL:
+                "https://tahadi-school-default-rtdb.europe-west1.firebasedatabase.app",
+
+            projectId:
+                "ahtahadi-e6f61",
+
+            storageBucket:
+                "ahtahadi-e6f61.firebasestorage.app",
+
+            messagingSenderId:
+                "271225539711",
+
+            appId:
+                "1:271225539711:web:9fc4b45cf14d879b55434a",
+
+            measurementId:
+                "G-S5JDFN1RKF"
+
+        };
+
+
+        /* =====================================================
+           INITIALIZE
+        ====================================================== */
+
+        const app =
+            initializeApp(
+                firebaseConfig
+            );
+
+
+        const db =
+            getDatabase(
+                app
+            );
+
+
+        /* =====================================================
+           ELEMENTS
+        ====================================================== */
+
+        const loadingScreen =
+            document.getElementById(
+                "loadingScreen"
+            );
+
+
+        const toast =
+            document.getElementById(
+                "toast"
+            );
+
+
+        const totalCount =
+            document.getElementById(
+                "totalCount"
+            );
+
+
+        const maleCount =
+            document.getElementById(
+                "maleCount"
+            );
+
+
+        const femaleCount =
+            document.getElementById(
+                "femaleCount"
+            );
+
+
+        const tableBody =
+            document.getElementById(
+                "tableBody"
+            );
+
+
+        const mobileList =
+            document.getElementById(
+                "mobileList"
+            );
+
+
+        const emptyState =
+            document.getElementById(
+                "emptyState"
+            );
+
+
+        const resultsCount =
+            document.getElementById(
+                "resultsCount"
+            );
+
+
+        const selectedCount =
+            document.getElementById(
+                "selectedCount"
+            );
+
+
+        const searchInput =
+            document.getElementById(
+                "searchInput"
+            );
+
+
+        const selectAllButton =
+            document.getElementById(
+                "selectAllButton"
+            );
+
+
+        const clearButton =
+            document.getElementById(
+                "clearButton"
+            );
+
+
+        const whatsappButton =
+            document.getElementById(
+                "whatsappButton"
+            );
+
+
+        const schoolLogo =
+            document.getElementById(
+                "schoolLogo"
+            );
+
+
+        const logoFallback =
+            document.getElementById(
+                "logoFallback"
+            );
+
+
+        /* =====================================================
+           DATA
+        ====================================================== */
+
+        let allApplicants = [];
+
+        let currentFilter = "all";
+
+        let selectedUIDs = new Set();
+
+        let toastTimer = null;
+
+
+        /* =====================================================
+           TOAST
+        ====================================================== */
+
+        function showToast(
+            message,
+            type = ""
+        ) {
+
+            toast.textContent =
+                message;
+
+            toast.className =
+                "toast show " + type;
+
+
+            clearTimeout(
+                toastTimer
+            );
+
+
+            toastTimer =
+                setTimeout(
+                    function() {
+
+                        toast.className =
+                            "toast";
+
+                    },
+                    3500
+                );
+
+        }
+
+
+        /* =====================================================
+           ESCAPE HTML
+        ====================================================== */
+
+        function escapeHTML(
+            value
+        ) {
+
+            if (
+                value === null ||
+                value === undefined
+            ) {
+
+                return "";
+
+            }
+
+
+            return String(value)
+
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+
+                .replace(
+                    />/g,
+                    "&gt;"
+                )
+
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+
+                .replace(
+                    /'/g,
+                    "&#039;"
+                );
+
+        }
+
+
+        /* =====================================================
+           FORMAT DATE
+        ====================================================== */
+
+        function formatDate(
+            value
+        ) {
+
+            if (!value) {
+
+                return "غير متوفر";
+
+            }
+
+
+            try {
+
+                const date =
+                    new Date(value);
+
+
+                if (
+                    Number.isNaN(
+                        date.getTime()
+                    )
+                ) {
+
+                    return value;
+
+                }
+
+
+                return date.toLocaleString(
+                    "ar-IQ",
+                    {
+                        year: "numeric",
+                        month: "2-digit",
+                        day: "2-digit",
+                        hour: "2-digit",
+                        minute: "2-digit"
+                    }
+                );
+
+            } catch (error) {
+
+                return value;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           NORMALIZE PHONE
+        ====================================================== */
+
+        function normalizeIraqiPhone(
+            phone
+        ) {
+
+            if (!phone) {
+
+                return "";
+
+            }
+
+
+            let value =
+                String(phone)
+                    .trim()
+                    .replace(
+                        /\s+/g,
+                        ""
+                    )
+                    .replace(
+                        /-/g,
+                        ""
+                    );
+
+
+            if (
+                value.startsWith("+964")
+            ) {
+
+                return value.substring(1);
+
+            }
+
+
+            if (
+                value.startsWith("00964")
+            ) {
+
+                return value.substring(2);
+
+            }
+
+
+            if (
+                value.startsWith("964")
+            ) {
+
+                return value;
+
+            }
+
+
+            if (
+                value.startsWith("07")
+            ) {
+
+                return "964" +
+                    value.substring(1);
+
+            }
+
+
+            if (
+                value.startsWith("7")
+            ) {
+
+                return "964" +
+                    value;
+
+            }
+
+
+            return value;
+
+        }
+
+
+        /* =====================================================
+           GET APPLICANT NAME
+        ====================================================== */
+
+        function getApplicantName(
+            applicant
+        ) {
+
+            return (
+                applicant?.personal?.fullName ||
+                applicant?.fullName ||
+                "عزيزي المتقدم"
+            );
+
+        }
+
+
+        /* =====================================================
+           GET APPLICANT PHONE
+        ====================================================== */
+
+        function getApplicantPhone(
+            applicant
+        ) {
+
+            return (
+                applicant?.personal?.phone ||
+                applicant?.phone ||
+                ""
+            );
+
+        }
+
+
+        /* =====================================================
+           LOAD DATA
+        ====================================================== */
+
+        async function loadApplicants() {
+
+            loadingScreen.classList.add(
+                "active"
+            );
+
+
+            try {
+
+                const applicationsReference =
+                    ref(
+                        db,
+                        "jobApplications"
+                    );
+
+
+                const snapshot =
+                    await get(
+                        applicationsReference
+                    );
+
+
+                if (
+                    !snapshot.exists()
+                ) {
+
+                    allApplicants = [];
+
+                    updateStatistics();
+
+                    renderApplicants();
+
+                    return;
+
+                }
+
+
+                const data =
+                    snapshot.val();
+
+
+                allApplicants =
+                    Object.entries(data)
+
+                        .map(
+                            function(
+                                [
+                                    uid,
+                                    applicant
+                                ]
+                            ) {
+
+                                return {
+
+                                    uid: uid,
+
+                                    ...(applicant || {})
+
+                                };
+
+                            }
+                        );
+
+
+                /*
+                 * ترتيب الأحدث أولاً
+                 */
+
+                allApplicants.sort(
+                    function(
+                        a,
+                        b
+                    ) {
+
+                        return (
+                            Number(
+                                b.timestamp || 0
+                            )
+                            -
+                            Number(
+                                a.timestamp || 0
+                            )
+                        );
+
+                    }
+                );
+
+
+                updateStatistics();
+
+                renderApplicants();
+
+
+            } catch (error) {
+
+                console.error(
+                    "Firebase Error:",
+                    error
+                );
+
+
+                if (
+                    !navigator.onLine
+                ) {
+
+                    showToast(
+                        "لا يوجد اتصال بالإنترنت.",
+                        "error"
+                    );
+
+                } else {
+
+                    showToast(
+                        "تعذر قراءة بيانات Firebase. تأكد من Firebase Rules.",
+                        "error"
+                    );
+
+                }
+
+
+                tableBody.innerHTML = "";
+
+                mobileList.innerHTML = "";
+
+                emptyState.style.display =
+                    "block";
+
+            } finally {
+
+                loadingScreen.classList.remove(
+                    "active"
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           STATISTICS
+        ====================================================== */
+
+        function updateStatistics() {
+
+            const total =
+                allApplicants.length;
+
+
+            const males =
+                allApplicants.filter(
+                    function(applicant) {
+
+                        return (
+                            applicant?.personal?.gender ===
+                            "ذكر"
+                        );
+
+                    }
+                ).length;
+
+
+            const females =
+                allApplicants.filter(
+                    function(applicant) {
+
+                        return (
+                            applicant?.personal?.gender ===
+                            "أنثى"
+                        );
+
+                    }
+                ).length;
+
+
+            totalCount.textContent =
+                total;
+
+
+            maleCount.textContent =
+                males;
+
+
+            femaleCount.textContent =
+                females;
+
+        }
+
+
+        /* =====================================================
+           FILTER DATA
+        ====================================================== */
+
+        function getFilteredApplicants() {
+
+            let result =
+                allApplicants;
+
+
+            if (
+                currentFilter !==
+                "all"
+            ) {
+
+                result =
+                    result.filter(
+                        function(applicant) {
+
+                            return (
+                                applicant?.personal?.gender ===
+                                currentFilter
+                            );
+
+                        }
+                    );
+
+            }
+
+
+            const search =
+                searchInput.value
+                    .trim()
+                    .toLowerCase();
+
+
+            if (search) {
+
+                result =
+                    result.filter(
+                        function(applicant) {
+
+                            const name =
+                                getApplicantName(
+                                    applicant
+                                ).toLowerCase();
+
+
+                            const uid =
+                                String(
+                                    applicant.uid || ""
+                                ).toLowerCase();
+
+
+                            const phone =
+                                getApplicantPhone(
+                                    applicant
+                                ).toLowerCase();
+
+
+                            return (
+                                name.includes(search) ||
+                                uid.includes(search) ||
+                                phone.includes(search)
+                            );
+
+                        }
+                    );
+
+            }
+
+
+            return result;
+
+        }
+
+
+        /* =====================================================
+           RENDER
+        ====================================================== */
+
+        function renderApplicants() {
+
+            const applicants =
+                getFilteredApplicants();
+
+
+            resultsCount.textContent =
+                applicants.length +
+                " متقدم";
+
+
+            tableBody.innerHTML = "";
+
+            mobileList.innerHTML = "";
+
+
+            if (
+                applicants.length === 0
+            ) {
+
+                emptyState.style.display =
+                    "block";
+
+                updateSelectionUI();
+
+                return;
+
+            }
+
+
+            emptyState.style.display =
+                "none";
+
+
+            applicants.forEach(
+                function(applicant) {
+
+                    renderTableRow(
+                        applicant
+                    );
+
+
+                    renderMobileCard(
+                        applicant
+                    );
+
+                }
+            );
+
+
+            updateSelectionUI();
+
+        }
+
+
+        /* =====================================================
+           RENDER TABLE ROW
+        ====================================================== */
+
+        function renderTableRow(
+            applicant
+        ) {
+
+            const personal =
+                applicant.personal || {};
+
+
+            const job =
+                applicant.job || {};
+
+
+            const education =
+                applicant.education || {};
+
+
+            const experience =
+                applicant.experience || {};
+
+
+            const gender =
+                personal.gender || "";
+
+
+            const genderClass =
+                gender === "ذكر"
+                    ? "gender-male"
+                    : "gender-female";
+
+
+            const statusClass =
+                applicant.status === "جديد"
+                    ? "status-new"
+                    : "status-other";
+
+
+            const checked =
+                selectedUIDs.has(
+                    applicant.uid
+                )
+                    ? "checked"
+                    : "";
+
+
+            const row =
+                document.createElement(
+                    "tr"
+                );
+
+
+            row.innerHTML = `
+
+                <td class="select-cell">
+
+                    <input
+                        type="checkbox"
+                        class="row-checkbox"
+                        data-uid="${escapeHTML(applicant.uid)}"
+                        ${checked}
+                    >
+
+                </td>
+
+
+                <td>
+
+                    <span class="uid">
+                        ${escapeHTML(applicant.uid)}
+                    </span>
+
+                </td>
+
+
+                <td>
+
+                    <span class="name-cell">
+                        ${escapeHTML(personal.fullName || "غير متوفر")}
+                    </span>
+
+                </td>
+
+
+                <td>
+
+                    <span class="gender-badge ${genderClass}">
+                        ${escapeHTML(gender || "غير محدد")}
+                    </span>
+
+                </td>
+
+
+                <td>
+                    ${escapeHTML(personal.birthDate || "غير متوفر")}
+                </td>
+
+
+                <td>
+
+                    <span class="phone-cell">
+                        ${escapeHTML(personal.phone || "غير متوفر")}
+                    </span>
+
+                </td>
+
+
+                <td>
+                    ${escapeHTML(personal.address || "غير متوفر")}
+                </td>
+
+
+                <td>
+                    ${escapeHTML(job.schoolLevel || "غير متوفر")}
+                </td>
+
+
+                <td>
+                    ${escapeHTML(job.specialization || "غير متوفر")}
+                </td>
+
+
+                <td>
+                    ${escapeHTML(education.certificate || "غير متوفر")}
+                </td>
+
+
+                <td>
+                    ${escapeHTML(education.university || "غير متوفر")}
+                </td>
+
+
+                <td>
+                    ${escapeHTML(education.college || "غير متوفر")}
+                </td>
+
+
+                <td>
+                    ${escapeHTML(education.specialization || "غير متوفر")}
+                </td>
+
+
+                <td>
+                    ${escapeHTML(education.graduationYear || "غير متوفر")}
+                </td>
+
+
+                <td>
+                    ${escapeHTML(education.gpa || "غير متوفر")}
+                </td>
+
+
+                <td>
+                    ${escapeHTML(experience.experience || "لا توجد")}
+                </td>
+
+
+                <td>
+                    ${escapeHTML(experience.previousWork || "لا يوجد")}
+                </td>
+
+
+                <td>
+                    ${escapeHTML(experience.governmentEmployee || "غير محدد")}
+                </td>
+
+
+                <td>
+
+                    <span class="status-badge ${statusClass}">
+                        ${escapeHTML(applicant.status || "غير محدد")}
+                    </span>
+
+                </td>
+
+
+                <td>
+                    ${escapeHTML(
+                        formatDate(
+                            applicant.submittedAt
+                        )
+                    )}
+                </td>
+
+            `;
+
+
+            const checkbox =
+                row.querySelector(
+                    ".row-checkbox"
+                );
+
+
+            checkbox.addEventListener(
+                "change",
+                function() {
+
+                    handleSelection(
+                        applicant.uid,
+                        this.checked
+                    );
+
+                }
+            );
+
+
+            tableBody.appendChild(
+                row
+            );
+
+        }
+
+
+        /* =====================================================
+           RENDER MOBILE CARD
+        ====================================================== */
+
+        function renderMobileCard(
+            applicant
+        ) {
+
+            const personal =
+                applicant.personal || {};
+
+
+            const job =
+                applicant.job || {};
+
+
+            const education =
+                applicant.education || {};
+
+
+            const experience =
+                applicant.experience || {};
+
+
+            const gender =
+                personal.gender || "";
+
+
+            const genderClass =
+                gender === "ذكر"
+                    ? "gender-male"
+                    : "gender-female";
+
+
+            const statusClass =
+                applicant.status === "جديد"
+                    ? "status-new"
+                    : "status-other";
+
+
+            const checked =
+                selectedUIDs.has(
+                    applicant.uid
+                )
+                    ? "checked"
+                    : "";
+
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "applicant-card";
+
+
+            card.innerHTML = `
+
+                <div class="card-top">
+
+
+                    <div class="card-check">
+
+                        <input
+                            type="checkbox"
+                            class="row-checkbox"
+                            data-uid="${escapeHTML(applicant.uid)}"
+                            ${checked}
+                        >
+
+                    </div>
+
+
+                    <div class="card-main">
+
+
+                        <div class="card-name">
+
+                            ${escapeHTML(
+                                personal.fullName ||
+                                "غير متوفر"
+                            )}
+
+                        </div>
+
+
+                        <div class="card-uid">
+
+                            ${escapeHTML(
+                                applicant.uid
+                            )}
+
+                        </div>
+
+
+                        <div class="card-badges">
+
+                            <span
+                                class="gender-badge ${genderClass}"
+                            >
+                                ${escapeHTML(
+                                    gender ||
+                                    "غير محدد"
+                                )}
+                            </span>
+
+
+                            <span
+                                class="status-badge ${statusClass}"
+                            >
+                                ${escapeHTML(
+                                    applicant.status ||
+                                    "غير محدد"
+                                )}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-details">
+
+
+                    ${mobileDetail(
+                        "المواليد",
+                        personal.birthDate
+                    )}
+
+
+                    ${mobileDetail(
+                        "رقم الهاتف",
+                        personal.phone
+                    )}
+
+
+                    ${mobileDetail(
+                        "عنوان السكن",
+                        personal.address,
+                        true
+                    )}
+
+
+                    ${mobileDetail(
+                        "المرحلة",
+                        job.schoolLevel
+                    )}
+
+
+                    ${mobileDetail(
+                        "المادة",
+                        job.specialization
+                    )}
+
+
+                    ${mobileDetail(
+                        "الشهادة",
+                        education.certificate
+                    )}
+
+
+                    ${mobileDetail(
+                        "الجامعة",
+                        education.university
+                    )}
+
+
+                    ${mobileDetail(
+                        "الكلية",
+                        education.college
+                    )}
+
+
+                    ${mobileDetail(
+                        "تخصص الدراسة",
+                        education.specialization
+                    )}
+
+
+                    ${mobileDetail(
+                        "سنة التخرج",
+                        education.graduationYear
+                    )}
+
+
+                    ${mobileDetail(
+                        "المعدل",
+                        education.gpa
+                    )}
+
+
+                    ${mobileDetail(
+                        "موظف حكومي",
+                        experience.governmentEmployee
+                    )}
+
+
+                    ${mobileDetail(
+                        "الخبرات",
+                        experience.experience,
+                        true
+                    )}
+
+
+                    ${mobileDetail(
+                        "العمل السابق",
+                        experience.previousWork,
+                        true
+                    )}
+
+
+                    ${mobileDetail(
+                        "تاريخ التقديم",
+                        formatDate(
+                            applicant.submittedAt
+                        ),
+                        true
+                    )}
+
+                </div>
+
+            `;
+
+
+            const checkbox =
+                card.querySelector(
+                    ".row-checkbox"
+                );
+
+
+            checkbox.addEventListener(
+                "change",
+                function() {
+
+                    handleSelection(
+                        applicant.uid,
+                        this.checked
+                    );
+
+                }
+            );
+
+
+            mobileList.appendChild(
+                card
+            );
+
+        }
+
+
+        /* =====================================================
+           MOBILE DETAIL
+        ====================================================== */
+
+        function mobileDetail(
+            label,
+            value,
+            full = false
+        ) {
+
+            const safeValue =
+                value ||
+                "غير متوفر";
+
+
+            return `
+
+                <div class="detail ${full ? "full" : ""}">
+
+                    <div class="detail-label">
+                        ${escapeHTML(label)}
+                    </div>
+
+                    <div class="detail-value">
+                        ${escapeHTML(safeValue)}
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+        /* =====================================================
+           SELECTION
+        ====================================================== */
+
+        function handleSelection(
+            uid,
+            checked
+        ) {
+
+            if (checked) {
+
+                selectedUIDs.add(
+                    uid
+                );
+
+            } else {
+
+                selectedUIDs.delete(
+                    uid
+                );
+
+            }
+
+
+            updateSelectionUI();
+
+        }
+
+
+        /* =====================================================
+           UPDATE SELECTION UI
+        ====================================================== */
+
+        function updateSelectionUI() {
+
+            selectedCount.textContent =
+                selectedUIDs.size;
+
+
+            whatsappButton.disabled =
+                selectedUIDs.size === 0;
+
+        }
+
+
+        /* =====================================================
+           FILTER BUTTONS
+        ====================================================== */
+
+        document
+            .querySelectorAll(
+                ".filter-button"
+            )
+            .forEach(
+                function(button) {
+
+                    button.addEventListener(
+                        "click",
+                        function() {
+
+                            document
+                                .querySelectorAll(
+                                    ".filter-button"
+                                )
+                                .forEach(
+                                    function(item) {
+
+                                        item.classList.remove(
+                                            "active"
+                                        );
+
+                                    }
+                                );
+
+
+                            this.classList.add(
+                                "active"
+                            );
+
+
+                            currentFilter =
+                                this.dataset.filter;
+
+
+                            renderApplicants();
+
+                        }
+                    );
+
+                }
+            );
+
+
+        /* =====================================================
+           SEARCH
+        ====================================================== */
+
+        searchInput.addEventListener(
+            "input",
+            function() {
+
+                renderApplicants();
+
+            }
+        );
+
+
+        /* =====================================================
+           SELECT ALL
+        ====================================================== */
+
+        selectAllButton.addEventListener(
+            "click",
+            function() {
+
+                const applicants =
+                    getFilteredApplicants();
+
+
+                if (
+                    applicants.length === 0
+                ) {
+
+                    showToast(
+                        "لا توجد طلبات لتحديدها.",
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                applicants.forEach(
+                    function(applicant) {
+
+                        selectedUIDs.add(
+                            applicant.uid
+                        );
+
+                    }
+                );
+
+
+                renderApplicants();
+
+
+                showToast(
+                    "تم تحديد جميع المتقدمين الظاهرين.",
+                    "success"
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           CLEAR SELECTION
+        ====================================================== */
+
+        clearButton.addEventListener(
+            "click",
+            function() {
+
+                selectedUIDs.clear();
+
+                renderApplicants();
+
+                showToast(
+                    "تم إلغاء جميع التحديدات.",
+                    "success"
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           WHATSAPP MESSAGE
+        ====================================================== */
+
+        function createWhatsAppMessage(
+            applicant
+        ) {
+
+            const name =
+                getApplicantName(
+                    applicant
+                );
+
+
+            return `السلام عليكم ورحمة الله وبركاته،
+
+عزيزي ${name}،
+
+يسر مدرسة التحدي الأهلية المختلطة إعلامك بأنه تم اختيارك للحضور إلى المدرسة يوم غد في تمام الساعة السادسة مساءً، وذلك لإجراء الاختبار والتقييم حسب طلب التوظيف الذي تقدمت به.
+
+يرجى التفضل بالحضور في الموعد المحدد وإجراء ما يلزم.
+
+مع تمنياتنا لك بالتوفيق والنجاح.
+
+مدرسة التحدي الأهلية المختلطة
+قسم الحوكمة`;
+
+        }
+
+
+        /* =====================================================
+           OPEN WHATSAPP
+        ====================================================== */
+
+        function openWhatsApp(
+            applicant
+        ) {
+
+            const phone =
+                normalizeIraqiPhone(
+                    getApplicantPhone(
+                        applicant
+                    )
+                );
+
+
+            if (!phone) {
+
+                return false;
+
+            }
+
+
+            const message =
+                createWhatsAppMessage(
+                    applicant
+                );
+
+
+            const url =
+                "https://wa.me/" +
+                phone +
+                "?text=" +
+                encodeURIComponent(
+                    message
+                );
+
+
+            window.open(
+                url,
+                "_blank"
+            );
+
+
+            return true;
+
+        }
+
+
+        /* =====================================================
+           SEND WHATSAPP
+        ====================================================== */
+
+        whatsappButton.addEventListener(
+            "click",
+            async function() {
+
+                if (
+                    selectedUIDs.size === 0
+                ) {
+
+                    showToast(
+                        "يرجى تحديد متقدم واحد على الأقل.",
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                const selectedApplicants =
+                    allApplicants.filter(
+                        function(applicant) {
+
+                            return selectedUIDs.has(
+                                applicant.uid
+                            );
+
+                        }
+                    );
+
+
+                const applicantsWithPhone =
+                    selectedApplicants.filter(
+                        function(applicant) {
+
+                            return Boolean(
+                                normalizeIraqiPhone(
+                                    getApplicantPhone(
+                                        applicant
+                                    )
+                                )
+                            );
+
+                        }
+                    );
+
+
+                const applicantsWithoutPhone =
+                    selectedApplicants.length -
+                    applicantsWithPhone.length;
+
+
+                if (
+                    applicantsWithPhone.length === 0
+                ) {
+
+                    showToast(
+                        "المتقدمون المحددون لا تحتوي طلباتهم على أرقام هواتف.",
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                if (
+                    applicantsWithPhone.length === 1
+                ) {
+
+                    openWhatsApp(
+                        applicantsWithPhone[0]
+                    );
+
+
+                    if (
+                        applicantsWithoutPhone > 0
+                    ) {
+
+                        showToast(
+                            "تم فتح واتساب. يوجد متقدم محدد بدون رقم هاتف.",
+                            "error"
+                        );
+
+                    }
+
+                    return;
+
+                }
+
+
+                /*
+                 * المتصفحات قد تمنع فتح عدة نوافذ
+                 * دفعة واحدة، لذلك نفتح الروابط
+                 * بالتتابع بفاصل بسيط.
+                 */
+
+                let index = 0;
+
+
+                function openNext() {
+
+                    if (
+                        index >=
+                        applicantsWithPhone.length
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    openWhatsApp(
+                        applicantsWithPhone[index]
+                    );
+
+
+                    index++;
+
+
+                    if (
+                        index <
+                        applicantsWithPhone.length
+                    ) {
+
+                        setTimeout(
+                            openNext,
+                            800
+                        );
+
+                    }
+
+                }
+
+
+                openNext();
+
+
+                if (
+                    applicantsWithoutPhone > 0
+                ) {
+
+                    showToast(
+                        `تم فتح واتساب لـ ${applicantsWithPhone.length} متقدم، وهناك ${applicantsWithoutPhone} بدون رقم هاتف.`,
+                        "error"
+                    );
+
+                } else {
+
+                    showToast(
+                        `تم تجهيز رسائل واتساب لـ ${applicantsWithPhone.length} متقدم.`,
+                        "success"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           LOGO FALLBACK
+        ====================================================== */
+
+        schoolLogo.addEventListener(
+            "error",
+            function() {
+
+                schoolLogo.style.display =
+                    "none";
+
+                logoFallback.style.display =
+                    "flex";
+
+            }
+        );
+
+
+        /* =====================================================
+           START
+        ====================================================== */
+
+        loadApplicants();
+
+    </script>
+
 </body>
+
 </html>
