@@ -13,7 +13,10 @@
     <title>المتقدمين إلى طلب التوظيف | مدرسة التحدي</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -46,18 +49,23 @@
         :root {
 
             --blue: #0b63d8;
+
             --blue-dark: #0649a8;
+
             --blue-light: #edf5ff;
 
             --red: #d71920;
 
             --green: #079455;
+
             --green-light: #edfff5;
 
             --orange: #f59e0b;
+
             --orange-light: #fff8e7;
 
             --text: #10233f;
+
             --muted: #718096;
 
             --border: #e1e8f2;
@@ -76,6 +84,7 @@
         html {
 
             width: 100%;
+
             min-height: 100%;
 
             background: var(--bg);
@@ -88,6 +97,7 @@
         body {
 
             width: 100%;
+
             min-height: 100dvh;
 
             font-family:
@@ -157,9 +167,11 @@
             position: absolute;
 
             width: 420px;
+
             height: 420px;
 
             top: -220px;
+
             right: -170px;
 
             border-radius: 50%;
@@ -182,9 +194,11 @@
             position: absolute;
 
             width: 360px;
+
             height: 360px;
 
             bottom: -190px;
+
             left: -150px;
 
             border-radius: 50%;
@@ -226,7 +240,7 @@
 
             width: 100%;
 
-            max-width: 1400px;
+            max-width: 1600px;
 
             margin: 0 auto;
 
@@ -249,6 +263,7 @@
         .logo-box {
 
             width: 78px;
+
             height: 78px;
 
             margin:
@@ -262,6 +277,7 @@
         .logo {
 
             width: 100%;
+
             height: 100%;
 
             object-fit: contain;
@@ -274,11 +290,13 @@
         .logo-fallback {
 
             width: 100%;
+
             height: 100%;
 
             display: none;
 
             align-items: center;
+
             justify-content: center;
 
             border-radius: 20px;
@@ -377,7 +395,8 @@
 
             padding: 20px 18px;
 
-            background: rgba(255,255,255,.97);
+            background:
+                rgba(255,255,255,.97);
 
             border:
                 1px solid
@@ -398,7 +417,8 @@
 
         .stat-card:hover {
 
-            transform: translateY(-2px);
+            transform:
+                translateY(-2px);
 
             box-shadow:
                 0 17px 40px
@@ -414,9 +434,11 @@
             position: absolute;
 
             width: 80px;
+
             height: 80px;
 
             left: -25px;
+
             bottom: -30px;
 
             border-radius: 50%;
@@ -430,11 +452,13 @@
         .stat-icon {
 
             width: 43px;
+
             height: 43px;
 
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
             border-radius: 13px;
@@ -601,6 +625,537 @@
         }
 
 
+        /* =====================================================
+           SEARCH
+        ====================================================== */
+
+        .search-box {
+
+            position: relative;
+
+            margin-top: 14px;
+
+        }
+
+
+        .search-box input {
+
+            width: 100%;
+
+            height: 48px;
+
+            padding:
+                0
+                45px
+                0
+                15px;
+
+            border:
+                1.5px solid
+                var(--border);
+
+            border-radius: 13px;
+
+            outline: none;
+
+            background: #f9fbfe;
+
+            color: var(--text);
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            transition:
+                .2s ease;
+
+        }
+
+
+        .search-box input:focus {
+
+            border-color:
+                var(--blue);
+
+            background: white;
+
+            box-shadow:
+                0 0 0 4px
+                rgba(11,99,216,.06);
+
+        }
+
+
+        .search-icon {
+
+            position: absolute;
+
+            right: 15px;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            color: #8b98aa;
+
+            font-size: 16px;
+
+            pointer-events: none;
+
+        }
+
+
+        /* =====================================================
+           EXCEL FILTER PANEL
+        ====================================================== */
+
+        .excel-filter-title {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+
+            margin-top: 18px;
+
+            margin-bottom: 10px;
+
+            padding-top: 16px;
+
+            border-top:
+                1px solid
+                #edf1f6;
+
+        }
+
+
+        .excel-filter-title-text {
+
+            font-size: 13px;
+
+            font-weight: 900;
+
+            color: var(--text);
+
+        }
+
+
+        .excel-filter-title-info {
+
+            color: var(--muted);
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+        }
+
+
+        .clear-filters-button {
+
+            height: 37px;
+
+            padding:
+                0
+                14px;
+
+            border:
+                1px solid
+                #ffd8dc;
+
+            border-radius: 10px;
+
+            color: #a51d29;
+
+            background: #fff5f6;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+        }
+
+
+        .excel-filters {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    5,
+                    minmax(150px, 1fr)
+                );
+
+            gap: 10px;
+
+        }
+
+
+        .excel-filter {
+
+            position: relative;
+
+            min-width: 0;
+
+        }
+
+
+        .excel-filter-label {
+
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: #66758a;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+        }
+
+
+        .excel-filter-button {
+
+            width: 100%;
+
+            min-height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 8px;
+
+            padding:
+                0
+                11px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 10px;
+
+            background: #f9fbfe;
+
+            color: #45566d;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            text-align: right;
+
+            transition:
+                .2s ease;
+
+        }
+
+
+        .excel-filter-button:hover {
+
+            border-color:
+                var(--blue);
+
+            background: white;
+
+        }
+
+
+        .excel-filter.active .excel-filter-button {
+
+            border-color:
+                var(--blue);
+
+            background:
+                var(--blue-light);
+
+            color:
+                var(--blue-dark);
+
+        }
+
+
+        .filter-button-text {
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            white-space: nowrap;
+
+        }
+
+
+        .filter-arrow {
+
+            flex: 0 0 auto;
+
+            font-size: 10px;
+
+        }
+
+
+        .excel-filter-menu {
+
+            position: absolute;
+
+            z-index: 300;
+
+            top: calc(100% + 6px);
+
+            right: 0;
+
+            width: 100%;
+
+            min-width: 220px;
+
+            max-height: 360px;
+
+            display: none;
+
+            overflow: hidden;
+
+            background: white;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 13px;
+
+            box-shadow:
+                0 18px 45px
+                rgba(16,35,63,.18);
+
+        }
+
+
+        .excel-filter.open {
+
+            z-index: 400;
+
+        }
+
+
+        .excel-filter.open
+        .excel-filter-menu {
+
+            display: block;
+
+        }
+
+
+        .filter-menu-search {
+
+            padding: 9px;
+
+            border-bottom:
+                1px solid
+                #edf1f6;
+
+        }
+
+
+        .filter-menu-search input {
+
+            width: 100%;
+
+            height: 36px;
+
+            padding:
+                0
+                10px;
+
+            outline: none;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 8px;
+
+            background: #f8fafc;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+        }
+
+
+        .filter-menu-search input:focus {
+
+            border-color:
+                var(--blue);
+
+            background: white;
+
+        }
+
+
+        .filter-menu-actions {
+
+            display: flex;
+
+            gap: 6px;
+
+            padding: 8px 9px;
+
+            border-bottom:
+                1px solid
+                #edf1f6;
+
+        }
+
+
+        .filter-menu-action {
+
+            flex: 1;
+
+            height: 32px;
+
+            border: 0;
+
+            border-radius: 7px;
+
+            background: #f0f4f9;
+
+            color: #536278;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+        }
+
+
+        .filter-menu-action.primary {
+
+            color: white;
+
+            background:
+                var(--blue);
+
+        }
+
+
+        .filter-options {
+
+            max-height: 260px;
+
+            overflow-y: auto;
+
+            padding: 5px;
+
+        }
+
+
+        .filter-option {
+
+            width: 100%;
+
+            min-height: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                5px
+                8px;
+
+            border: 0;
+
+            border-radius: 8px;
+
+            background: transparent;
+
+            color: #43536a;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            text-align: right;
+
+        }
+
+
+        .filter-option:hover {
+
+            background:
+                #f3f7fc;
+
+        }
+
+
+        .filter-option input {
+
+            width: 16px;
+
+            height: 16px;
+
+            flex: 0 0 auto;
+
+            accent-color:
+                var(--blue);
+
+        }
+
+
+        .filter-option-text {
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            white-space: nowrap;
+
+            flex: 1;
+
+        }
+
+
+        .filter-option-count {
+
+            color: #98a4b3;
+
+            font-size: 8px;
+
+            direction: ltr;
+
+        }
+
+
+        .filter-empty {
+
+            padding: 20px 10px;
+
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+        }
+
+
+        /* =====================================================
+           CONTROL ROW
+        ====================================================== */
+
         .control-row {
 
             display: flex;
@@ -724,88 +1279,8 @@
 
         .action-button:active {
 
-            transform: scale(.97);
-
-        }
-
-
-        /* =====================================================
-           SEARCH
-        ====================================================== */
-
-        .search-box {
-
-            position: relative;
-
-            margin-top: 14px;
-
-        }
-
-
-        .search-box input {
-
-            width: 100%;
-
-            height: 48px;
-
-            padding:
-                0
-                45px
-                0
-                15px;
-
-            border:
-                1.5px solid
-                var(--border);
-
-            border-radius: 13px;
-
-            outline: none;
-
-            background: #f9fbfe;
-
-            color: var(--text);
-
-            font-size: 12px;
-
-            font-weight: 600;
-
-            transition:
-                .2s ease;
-
-        }
-
-
-        .search-box input:focus {
-
-            border-color:
-                var(--blue);
-
-            background: white;
-
-            box-shadow:
-                0 0 0 4px
-                rgba(11,99,216,.06);
-
-        }
-
-
-        .search-icon {
-
-            position: absolute;
-
-            right: 15px;
-
-            top: 50%;
-
             transform:
-                translateY(-50%);
-
-            color: #8b98aa;
-
-            font-size: 16px;
-
-            pointer-events: none;
+                scale(.97);
 
         }
 
@@ -893,7 +1368,7 @@
 
             width: 100%;
 
-            min-width: 1500px;
+            min-width: 1700px;
 
             border-collapse: collapse;
 
@@ -994,6 +1469,7 @@
         .row-checkbox {
 
             width: 18px;
+
             height: 18px;
 
             accent-color:
@@ -1043,6 +1519,7 @@
             display: inline-flex;
 
             align-items: center;
+
             justify-content: center;
 
             min-width: 55px;
@@ -1098,81 +1575,8 @@
         }
 
 
-        .empty-state {
-
-            padding:
-                60px
-                20px;
-
-            text-align: center;
-
-            background: white;
-
-            border:
-                1px solid
-                var(--border);
-
-            border-radius: 20px;
-
-            box-shadow:
-                0 12px 40px
-                rgba(16,35,63,.06);
-
-        }
-
-
-        .empty-icon {
-
-            width: 65px;
-            height: 65px;
-
-            margin:
-                0
-                auto
-                14px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 20px;
-
-            color:
-                var(--blue);
-
-            background:
-                var(--blue-light);
-
-            font-size: 26px;
-
-        }
-
-
-        .empty-title {
-
-            font-size: 17px;
-
-            font-weight: 900;
-
-        }
-
-
-        .empty-description {
-
-            margin-top: 5px;
-
-            color: var(--muted);
-
-            font-size: 10px;
-
-            font-weight: 600;
-
-        }
-
-
         /* =====================================================
-           MOBILE CARDS
+           MOBILE
         ====================================================== */
 
         .mobile-list {
@@ -1342,6 +1746,85 @@
 
 
         /* =====================================================
+           EMPTY STATE
+        ====================================================== */
+
+        .empty-state {
+
+            padding:
+                60px
+                20px;
+
+            text-align: center;
+
+            background: white;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 12px 40px
+                rgba(16,35,63,.06);
+
+        }
+
+
+        .empty-icon {
+
+            width: 65px;
+
+            height: 65px;
+
+            margin:
+                0
+                auto
+                14px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 20px;
+
+            color:
+                var(--blue);
+
+            background:
+                var(--blue-light);
+
+            font-size: 26px;
+
+        }
+
+
+        .empty-title {
+
+            font-size: 17px;
+
+            font-weight: 900;
+
+        }
+
+
+        .empty-description {
+
+            margin-top: 5px;
+
+            color: var(--muted);
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+        }
+
+
+        /* =====================================================
            LOADING
         ====================================================== */
 
@@ -1356,6 +1839,7 @@
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
             flex-direction: column;
@@ -1387,6 +1871,7 @@
         .loader-circle {
 
             width: 48px;
+
             height: 48px;
 
             border:
@@ -1545,6 +2030,36 @@
            RESPONSIVE
         ====================================================== */
 
+        @media (max-width: 1200px) {
+
+            .excel-filters {
+
+                grid-template-columns:
+                    repeat(
+                        4,
+                        minmax(150px, 1fr)
+                    );
+
+            }
+
+        }
+
+
+        @media (max-width: 900px) {
+
+            .excel-filters {
+
+                grid-template-columns:
+                    repeat(
+                        3,
+                        minmax(140px, 1fr)
+                    );
+
+            }
+
+        }
+
+
         @media (max-width: 800px) {
 
             .app {
@@ -1578,6 +2093,7 @@
             .stat-icon {
 
                 width: 38px;
+
                 height: 38px;
 
                 font-size: 16px;
@@ -1611,6 +2127,17 @@
             .page-title {
 
                 font-size: 20px;
+
+            }
+
+
+            .excel-filters {
+
+                grid-template-columns:
+                    repeat(
+                        2,
+                        minmax(130px, 1fr)
+                    );
 
             }
 
@@ -1650,6 +2177,56 @@
             .mobile-list {
 
                 display: block;
+
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .excel-filters {
+
+                grid-template-columns:
+                    1fr 1fr;
+
+            }
+
+
+            .excel-filter-menu {
+
+                position: fixed;
+
+                top: 50%;
+
+                left: 12px;
+
+                right: 12px;
+
+                width: auto;
+
+                max-height: 70vh;
+
+                transform:
+                    translateY(-50%);
+
+                z-index: 1000;
+
+            }
+
+
+            .excel-filter.open::before {
+
+                content: "";
+
+                position: fixed;
+
+                inset: 0;
+
+                z-index: -1;
+
+                background:
+                    rgba(16,35,63,.35);
 
             }
 
@@ -1857,8 +2434,6 @@
             <section class="statistics">
 
 
-                <!-- ALL -->
-
                 <div class="stat-card">
 
                     <div class="stat-icon">
@@ -1879,8 +2454,6 @@
                 </div>
 
 
-                <!-- MALE -->
-
                 <div class="stat-card male">
 
                     <div class="stat-icon">
@@ -1900,8 +2473,6 @@
 
                 </div>
 
-
-                <!-- FEMALE -->
 
                 <div class="stat-card female">
 
@@ -1927,14 +2498,15 @@
 
 
             <!-- =================================================
-                 CONTROLS
+                 CONTROL PANEL
             ================================================== -->
 
             <section class="control-panel">
 
 
-                <div class="filter-buttons">
+                <!-- BASIC FILTERS -->
 
+                <div class="filter-buttons">
 
                     <button
                         type="button"
@@ -1962,7 +2534,6 @@
                         الإناث
                     </button>
 
-
                 </div>
 
 
@@ -1983,6 +2554,47 @@
 
                 </div>
 
+
+                <!-- =================================================
+                     EXCEL FILTERS
+                ================================================== -->
+
+                <div class="excel-filter-title">
+
+                    <div>
+
+                        <div class="excel-filter-title-text">
+                            فلاتر البيانات
+                        </div>
+
+                        <div class="excel-filter-title-info">
+                            اختر قيمة أو أكثر من أي حقل لتصفية النتائج
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="clear-filters-button"
+                        id="clearFiltersButton"
+                    >
+                        مسح جميع الفلاتر
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="excel-filters"
+                    id="excelFilters"
+                >
+                </div>
+
+
+                <!-- =================================================
+                     SELECTION
+                ================================================== -->
 
                 <div class="control-row">
 
@@ -2008,7 +2620,7 @@
                             class="action-button select-all-button"
                             id="selectAllButton"
                         >
-                            تحديد الكل
+                            تحديد الكل الظاهر
                         </button>
 
 
@@ -2059,7 +2671,7 @@
 
 
             <!-- =================================================
-                 DESKTOP TABLE
+                 TABLE
             ================================================== -->
 
             <div
@@ -2167,7 +2779,7 @@
 
 
             <!-- =================================================
-                 MOBILE LIST
+                 MOBILE
             ================================================== -->
 
             <div
@@ -2196,7 +2808,7 @@
                 </div>
 
                 <div class="empty-description">
-                    لا توجد بيانات متقدمين مطابقة للبحث أو الفلتر الحالي.
+                    لا توجد بيانات متقدمين مطابقة للبحث أو الفلاتر الحالية.
                 </div>
 
             </div>
@@ -2209,6 +2821,7 @@
             <footer class="footer">
 
                 جميع الحقوق محفوظة ©
+
                 <strong>
                     مدرسة التحدي
                 </strong>
@@ -2385,6 +2998,18 @@
             );
 
 
+        const clearFiltersButton =
+            document.getElementById(
+                "clearFiltersButton"
+            );
+
+
+        const excelFilters =
+            document.getElementById(
+                "excelFilters"
+            );
+
+
         const schoolLogo =
             document.getElementById(
                 "schoolLogo"
@@ -2408,6 +3033,159 @@
         let selectedUIDs = new Set();
 
         let toastTimer = null;
+
+
+        /*
+         * الفلاتر الحالية
+         *
+         * كل حقل يحتوي Set للقيم المختارة.
+         */
+
+        const activeFilters = {};
+
+
+        /* =====================================================
+           FILTER FIELD DEFINITIONS
+        ====================================================== */
+
+        const filterFields = [
+
+            {
+                key: "uid",
+                label: "UID",
+                getValue: applicant =>
+                    applicant.uid
+            },
+
+            {
+                key: "fullName",
+                label: "الاسم",
+                getValue: applicant =>
+                    applicant?.personal?.fullName
+            },
+
+            {
+                key: "gender",
+                label: "الجنس",
+                getValue: applicant =>
+                    applicant?.personal?.gender
+            },
+
+            {
+                key: "birthDate",
+                label: "المواليد",
+                getValue: applicant =>
+                    applicant?.personal?.birthDate
+            },
+
+            {
+                key: "phone",
+                label: "رقم الهاتف",
+                getValue: applicant =>
+                    applicant?.personal?.phone
+            },
+
+            {
+                key: "address",
+                label: "عنوان السكن",
+                getValue: applicant =>
+                    applicant?.personal?.address
+            },
+
+            {
+                key: "schoolLevel",
+                label: "المرحلة",
+                getValue: applicant =>
+                    applicant?.job?.schoolLevel
+            },
+
+            {
+                key: "jobSpecialization",
+                label: "المادة",
+                getValue: applicant =>
+                    applicant?.job?.specialization
+            },
+
+            {
+                key: "certificate",
+                label: "الشهادة",
+                getValue: applicant =>
+                    applicant?.education?.certificate
+            },
+
+            {
+                key: "university",
+                label: "الجامعة",
+                getValue: applicant =>
+                    applicant?.education?.university
+            },
+
+            {
+                key: "college",
+                label: "الكلية",
+                getValue: applicant =>
+                    applicant?.education?.college
+            },
+
+            {
+                key: "educationSpecialization",
+                label: "تخصص الدراسة",
+                getValue: applicant =>
+                    applicant?.education?.specialization
+            },
+
+            {
+                key: "graduationYear",
+                label: "سنة التخرج",
+                getValue: applicant =>
+                    applicant?.education?.graduationYear
+            },
+
+            {
+                key: "gpa",
+                label: "المعدل",
+                getValue: applicant =>
+                    applicant?.education?.gpa
+            },
+
+            {
+                key: "experience",
+                label: "الخبرات",
+                getValue: applicant =>
+                    applicant?.experience?.experience
+            },
+
+            {
+                key: "previousWork",
+                label: "العمل السابق",
+                getValue: applicant =>
+                    applicant?.experience?.previousWork
+            },
+
+            {
+                key: "governmentEmployee",
+                label: "موظف حكومي",
+                getValue: applicant =>
+                    applicant?.experience?.governmentEmployee
+            },
+
+            {
+                key: "status",
+                label: "الحالة",
+                getValue: applicant =>
+                    applicant?.status
+            },
+
+            {
+                key: "submittedAt",
+                label: "تاريخ التقديم",
+                getValue: applicant =>
+                    formatDate(
+                        applicant?.submittedAt
+                    )
+            }
+
+        ];
 
 
         /* =====================================================
@@ -2520,7 +3298,7 @@
                     )
                 ) {
 
-                    return value;
+                    return String(value);
 
                 }
 
@@ -2538,7 +3316,7 @@
 
             } catch (error) {
 
-                return value;
+                return String(value);
 
             }
 
@@ -2626,7 +3404,7 @@
 
 
         /* =====================================================
-           GET APPLICANT NAME
+           GET NAME
         ====================================================== */
 
         function getApplicantName(
@@ -2643,7 +3421,7 @@
 
 
         /* =====================================================
-           GET APPLICANT PHONE
+           GET PHONE
         ====================================================== */
 
         function getApplicantPhone(
@@ -2654,6 +3432,73 @@
                 applicant?.personal?.phone ||
                 applicant?.phone ||
                 ""
+            );
+
+        }
+
+
+        /* =====================================================
+           NORMALIZE FILTER VALUE
+        ====================================================== */
+
+        function getFilterValue(
+            applicant,
+            field
+        ) {
+
+            let value =
+                field.getValue(
+                    applicant
+                );
+
+
+            if (
+                value === null ||
+                value === undefined ||
+                String(value).trim() === ""
+            ) {
+
+                return "غير متوفر";
+
+            }
+
+
+            return String(value).trim();
+
+        }
+
+
+        /* =====================================================
+           SORT ARABIC NAMES
+        ====================================================== */
+
+        function sortApplicantsAlphabetically(
+            applicants
+        ) {
+
+            return applicants.sort(
+                function(a, b) {
+
+                    const nameA =
+                        getApplicantName(a)
+                            .trim();
+
+
+                    const nameB =
+                        getApplicantName(b)
+                            .trim();
+
+
+                    return nameA.localeCompare(
+                        nameB,
+                        "ar",
+                        {
+                            sensitivity: "base",
+                            numeric: false
+                        }
+                    );
+
+                }
             );
 
         }
@@ -2693,6 +3538,8 @@
 
                     updateStatistics();
 
+                    createExcelFilters();
+
                     renderApplicants();
 
                     return;
@@ -2728,30 +3575,17 @@
 
 
                 /*
-                 * ترتيب الأحدث أولاً
+                 * الترتيب الأبجدي
                  */
 
-                allApplicants.sort(
-                    function(
-                        a,
-                        b
-                    ) {
-
-                        return (
-                            Number(
-                                b.timestamp || 0
-                            )
-                            -
-                            Number(
-                                a.timestamp || 0
-                            )
-                        );
-
-                    }
+                sortApplicantsAlphabetically(
+                    allApplicants
                 );
 
 
                 updateStatistics();
+
+                createExcelFilters();
 
                 renderApplicants();
 
@@ -2852,6 +3686,737 @@
 
 
         /* =====================================================
+           CREATE EXCEL FILTERS
+        ====================================================== */
+
+        function createExcelFilters() {
+
+            excelFilters.innerHTML = "";
+
+
+            filterFields.forEach(
+                function(field) {
+
+                    activeFilters[field.key] =
+                        new Set();
+
+
+                    const wrapper =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    wrapper.className =
+                        "excel-filter";
+
+
+                    wrapper.dataset.key =
+                        field.key;
+
+
+                    wrapper.innerHTML = `
+
+                        <span class="excel-filter-label">
+                            ${escapeHTML(field.label)}
+                        </span>
+
+
+                        <button
+                            type="button"
+                            class="excel-filter-button"
+                        >
+
+                            <span class="filter-button-text">
+                                الكل
+                            </span>
+
+                            <span class="filter-arrow">
+                                ▾
+                            </span>
+
+                        </button>
+
+
+                        <div class="excel-filter-menu">
+
+
+                            <div class="filter-menu-search">
+
+                                <input
+                                    type="text"
+                                    placeholder="بحث في الخيارات..."
+                                    autocomplete="off"
+                                >
+
+                            </div>
+
+
+                            <div class="filter-menu-actions">
+
+                                <button
+                                    type="button"
+                                    class="filter-menu-action primary select-visible"
+                                >
+                                    تحديد الكل
+                                </button>
+
+
+                                <button
+                                    type="button"
+                                    class="filter-menu-action clear-visible"
+                                >
+                                    مسح
+                                </button>
+
+                            </div>
+
+
+                            <div class="filter-options">
+                            </div>
+
+
+                        </div>
+
+                    `;
+
+
+                    excelFilters.appendChild(
+                        wrapper
+                    );
+
+
+                    const button =
+                        wrapper.querySelector(
+                            ".excel-filter-button"
+                        );
+
+
+                    const search =
+                        wrapper.querySelector(
+                            ".filter-menu-search input"
+                        );
+
+
+                    button.addEventListener(
+                        "click",
+                        function(event) {
+
+                            event.stopPropagation();
+
+                            closeAllFilterMenus(
+                                wrapper
+                            );
+
+
+                            wrapper.classList.toggle(
+                                "open"
+                            );
+
+
+                            if (
+                                wrapper.classList.contains(
+                                    "open"
+                                )
+                            ) {
+
+                                renderFilterOptions(
+                                    field
+                                );
+
+                                setTimeout(
+                                    function() {
+
+                                        search.focus();
+
+                                    },
+                                    50
+                                );
+
+                            }
+
+                        }
+                    );
+
+
+                    search.addEventListener(
+                        "input",
+                        function() {
+
+                            renderFilterOptions(
+                                field
+                            );
+
+                        }
+                    );
+
+
+                    wrapper
+                        .querySelector(
+                            ".select-visible"
+                        )
+                        .addEventListener(
+                            "click",
+                            function() {
+
+                                const searchText =
+                                    search.value
+                                        .trim()
+                                        .toLowerCase();
+
+
+                                const values =
+                                    getUniqueFilterValues(
+                                        field
+                                    );
+
+
+                                values.forEach(
+                                    function(value) {
+
+                                        if (
+                                            !searchText ||
+                                            value
+                                                .toLowerCase()
+                                                .includes(
+                                                    searchText
+                                                )
+                                        ) {
+
+                                            activeFilters[
+                                                field.key
+                                            ].add(
+                                                value
+                                            );
+
+                                        }
+
+                                    }
+                                );
+
+
+                                renderFilterOptions(
+                                    field
+                                );
+
+                                updateFilterButton(
+                                    wrapper,
+                                    field
+                                );
+
+                                renderApplicants();
+
+                            }
+                        );
+
+
+                    wrapper
+                        .querySelector(
+                            ".clear-visible"
+                        )
+                        .addEventListener(
+                            "click",
+                            function() {
+
+                                activeFilters[
+                                    field.key
+                                ].clear();
+
+
+                                renderFilterOptions(
+                                    field
+                                );
+
+
+                                updateFilterButton(
+                                    wrapper,
+                                    field
+                                );
+
+
+                                renderApplicants();
+
+                            }
+                        );
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           CLOSE FILTER MENUS
+        ====================================================== */
+
+        function closeAllFilterMenus(
+            except = null
+        ) {
+
+            document
+                .querySelectorAll(
+                    ".excel-filter.open"
+                )
+                .forEach(
+                    function(item) {
+
+                        if (
+                            item !== except
+                        ) {
+
+                            item.classList.remove(
+                                "open"
+                            );
+
+                        }
+
+                    }
+                );
+
+        }
+
+
+        document.addEventListener(
+            "click",
+            function(event) {
+
+                if (
+                    !event.target.closest(
+                        ".excel-filter"
+                    )
+                ) {
+
+                    closeAllFilterMenus();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           GET UNIQUE FILTER VALUES
+        ====================================================== */
+
+        function getUniqueFilterValues(
+            field
+        ) {
+
+            const map =
+                new Map();
+
+
+            allApplicants.forEach(
+                function(applicant) {
+
+                    const value =
+                        getFilterValue(
+                            applicant,
+                            field
+                        );
+
+
+                    const normalized =
+                        value.toLowerCase();
+
+
+                    if (
+                        !map.has(
+                            normalized
+                        )
+                    ) {
+
+                        map.set(
+                            normalized,
+                            value
+                        );
+
+                    }
+
+                }
+            );
+
+
+            return Array.from(
+                map.values()
+            ).sort(
+                function(a, b) {
+
+                    return a.localeCompare(
+                        b,
+                        "ar",
+                        {
+                            sensitivity: "base",
+                            numeric: true
+                        }
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           COUNT FILTER VALUE
+        ====================================================== */
+
+        function countFilterValue(
+            field,
+            value
+        ) {
+
+            return allApplicants.filter(
+                function(applicant) {
+
+                    return (
+                        getFilterValue(
+                            applicant,
+                            field
+                        ) === value
+                    );
+
+                }
+            ).length;
+
+        }
+
+
+        /* =====================================================
+           RENDER FILTER OPTIONS
+        ====================================================== */
+
+        function renderFilterOptions(
+            field
+        ) {
+
+            const wrapper =
+                document.querySelector(
+                    `.excel-filter[data-key="${CSS.escape(field.key)}"]`
+                );
+
+
+            if (!wrapper) {
+
+                return;
+
+            }
+
+
+            const searchInput =
+                wrapper.querySelector(
+                    ".filter-menu-search input"
+                );
+
+
+            const optionsContainer =
+                wrapper.querySelector(
+                    ".filter-options"
+                );
+
+
+            const search =
+                searchInput.value
+                    .trim()
+                    .toLowerCase();
+
+
+            const values =
+                getUniqueFilterValues(
+                    field
+                );
+
+
+            const filteredValues =
+                values.filter(
+                    function(value) {
+
+                        return (
+                            !search ||
+                            value
+                                .toLowerCase()
+                                .includes(search)
+                        );
+
+                    }
+                );
+
+
+            if (
+                filteredValues.length === 0
+            ) {
+
+                optionsContainer.innerHTML = `
+
+                    <div class="filter-empty">
+                        لا توجد نتائج
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            optionsContainer.innerHTML =
+                filteredValues
+                    .map(
+                        function(value) {
+
+                            const checked =
+                                activeFilters[
+                                    field.key
+                                ].has(value)
+                                    ? "checked"
+                                    : "";
+
+
+                            const count =
+                                countFilterValue(
+                                    field,
+                                    value
+                                );
+
+
+                            return `
+
+                                <label class="filter-option">
+
+                                    <input
+                                        type="checkbox"
+                                        value="${escapeHTML(value)}"
+                                        ${checked}
+                                    >
+
+                                    <span class="filter-option-text">
+                                        ${escapeHTML(value)}
+                                    </span>
+
+                                    <span class="filter-option-count">
+                                        ${count}
+                                    </span>
+
+                                </label>
+
+                            `;
+
+                        }
+                    )
+                    .join("");
+
+
+            optionsContainer
+                .querySelectorAll(
+                    "input[type='checkbox']"
+                )
+                .forEach(
+                    function(checkbox) {
+
+                        checkbox.addEventListener(
+                            "change",
+                            function() {
+
+                                const value =
+                                    this.value;
+
+
+                                if (
+                                    this.checked
+                                ) {
+
+                                    activeFilters[
+                                        field.key
+                                    ].add(
+                                        value
+                                    );
+
+                                } else {
+
+                                    activeFilters[
+                                        field.key
+                                    ].delete(
+                                        value
+                                    );
+
+                                }
+
+
+                                updateFilterButton(
+                                    wrapper,
+                                    field
+                                );
+
+
+                                renderApplicants();
+
+                            }
+                        );
+
+                    }
+                );
+
+        }
+
+
+        /* =====================================================
+           UPDATE FILTER BUTTON
+        ====================================================== */
+
+        function updateFilterButton(
+            wrapper,
+            field
+        ) {
+
+            const selected =
+                activeFilters[
+                    field.key
+                ];
+
+
+            const text =
+                wrapper.querySelector(
+                    ".filter-button-text"
+                );
+
+
+            if (
+                selected.size === 0
+            ) {
+
+                text.textContent =
+                    "الكل";
+
+                wrapper.classList.remove(
+                    "active"
+                );
+
+                return;
+
+            }
+
+
+            wrapper.classList.add(
+                "active"
+            );
+
+
+            if (
+                selected.size === 1
+            ) {
+
+                text.textContent =
+                    Array.from(
+                        selected
+                    )[0];
+
+            } else {
+
+                text.textContent =
+                    `تم اختيار ${selected.size}`;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CLEAR ALL FILTERS
+        ====================================================== */
+
+        clearFiltersButton.addEventListener(
+            "click",
+            function() {
+
+                filterFields.forEach(
+                    function(field) {
+
+                        activeFilters[
+                            field.key
+                        ].clear();
+
+                    }
+                );
+
+
+                document
+                    .querySelectorAll(
+                        ".excel-filter"
+                    )
+                    .forEach(
+                        function(wrapper) {
+
+                            wrapper.classList.remove(
+                                "active"
+                            );
+
+
+                            const text =
+                                wrapper.querySelector(
+                                    ".filter-button-text"
+                                );
+
+
+                            if (text) {
+
+                                text.textContent =
+                                    "الكل";
+
+                            }
+
+                        }
+                    );
+
+
+                searchInput.value = "";
+
+                currentFilter =
+                    "all";
+
+
+                document
+                    .querySelectorAll(
+                        ".filter-button"
+                    )
+                    .forEach(
+                        function(button) {
+
+                            button.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                const allButton =
+                    document.querySelector(
+                        '.filter-button[data-filter="all"]'
+                    );
+
+
+                if (allButton) {
+
+                    allButton.classList.add(
+                        "active"
+                    );
+
+                }
+
+
+                renderApplicants();
+
+
+                showToast(
+                    "تم مسح جميع الفلاتر والبحث.",
+                    "success"
+                );
+
+            }
+        );
+
+
+        /* =====================================================
            FILTER DATA
         ====================================================== */
 
@@ -2860,6 +4425,10 @@
             let result =
                 allApplicants;
 
+
+            /*
+             * فلتر ذكر / أنثى
+             */
 
             if (
                 currentFilter !==
@@ -2880,6 +4449,55 @@
 
             }
 
+
+            /*
+             * فلاتر Excel
+             */
+
+            result =
+                result.filter(
+                    function(applicant) {
+
+                        return filterFields.every(
+                            function(field) {
+
+                                const selected =
+                                    activeFilters[
+                                        field.key
+                                    ];
+
+
+                                if (
+                                    !selected ||
+                                    selected.size === 0
+                                ) {
+
+                                    return true;
+
+                                }
+
+
+                                const value =
+                                    getFilterValue(
+                                        applicant,
+                                        field
+                                    );
+
+
+                                return selected.has(
+                                    value
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+
+            /*
+             * البحث العام
+             */
 
             const search =
                 searchInput.value
@@ -2911,16 +4529,32 @@
                                 ).toLowerCase();
 
 
+                            const address =
+                                String(
+                                    applicant?.personal?.address || ""
+                                ).toLowerCase();
+
+
                             return (
                                 name.includes(search) ||
                                 uid.includes(search) ||
-                                phone.includes(search)
+                                phone.includes(search) ||
+                                address.includes(search)
                             );
 
                         }
                     );
 
             }
+
+
+            /*
+             * ضمان الترتيب الأبجدي دائماً
+             */
+
+            sortApplicantsAlphabetically(
+                result
+            );
 
 
             return result;
@@ -2988,7 +4622,7 @@
 
 
         /* =====================================================
-           RENDER TABLE ROW
+           TABLE ROW
         ====================================================== */
 
         function renderTableRow(
@@ -3067,7 +4701,10 @@
                 <td>
 
                     <span class="name-cell">
-                        ${escapeHTML(personal.fullName || "غير متوفر")}
+                        ${escapeHTML(
+                            personal.fullName ||
+                            "غير متوفر"
+                        )}
                     </span>
 
                 </td>
@@ -3076,90 +4713,138 @@
                 <td>
 
                     <span class="gender-badge ${genderClass}">
-                        ${escapeHTML(gender || "غير محدد")}
+                        ${escapeHTML(
+                            gender ||
+                            "غير محدد"
+                        )}
                     </span>
 
                 </td>
 
 
                 <td>
-                    ${escapeHTML(personal.birthDate || "غير متوفر")}
+                    ${escapeHTML(
+                        personal.birthDate ||
+                        "غير متوفر"
+                    )}
                 </td>
 
 
                 <td>
 
                     <span class="phone-cell">
-                        ${escapeHTML(personal.phone || "غير متوفر")}
+                        ${escapeHTML(
+                            personal.phone ||
+                            "غير متوفر"
+                        )}
                     </span>
 
                 </td>
 
 
                 <td>
-                    ${escapeHTML(personal.address || "غير متوفر")}
+                    ${escapeHTML(
+                        personal.address ||
+                        "غير متوفر"
+                    )}
                 </td>
 
 
                 <td>
-                    ${escapeHTML(job.schoolLevel || "غير متوفر")}
+                    ${escapeHTML(
+                        job.schoolLevel ||
+                        "غير متوفر"
+                    )}
                 </td>
 
 
                 <td>
-                    ${escapeHTML(job.specialization || "غير متوفر")}
+                    ${escapeHTML(
+                        job.specialization ||
+                        "غير متوفر"
+                    )}
                 </td>
 
 
                 <td>
-                    ${escapeHTML(education.certificate || "غير متوفر")}
+                    ${escapeHTML(
+                        education.certificate ||
+                        "غير متوفر"
+                    )}
                 </td>
 
 
                 <td>
-                    ${escapeHTML(education.university || "غير متوفر")}
+                    ${escapeHTML(
+                        education.university ||
+                        "غير متوفر"
+                    )}
                 </td>
 
 
                 <td>
-                    ${escapeHTML(education.college || "غير متوفر")}
+                    ${escapeHTML(
+                        education.college ||
+                        "غير متوفر"
+                    )}
                 </td>
 
 
                 <td>
-                    ${escapeHTML(education.specialization || "غير متوفر")}
+                    ${escapeHTML(
+                        education.specialization ||
+                        "غير متوفر"
+                    )}
                 </td>
 
 
                 <td>
-                    ${escapeHTML(education.graduationYear || "غير متوفر")}
+                    ${escapeHTML(
+                        education.graduationYear ||
+                        "غير متوفر"
+                    )}
                 </td>
 
 
                 <td>
-                    ${escapeHTML(education.gpa || "غير متوفر")}
+                    ${escapeHTML(
+                        education.gpa ||
+                        "غير متوفر"
+                    )}
                 </td>
 
 
                 <td>
-                    ${escapeHTML(experience.experience || "لا توجد")}
+                    ${escapeHTML(
+                        experience.experience ||
+                        "لا توجد"
+                    )}
                 </td>
 
 
                 <td>
-                    ${escapeHTML(experience.previousWork || "لا يوجد")}
+                    ${escapeHTML(
+                        experience.previousWork ||
+                        "لا يوجد"
+                    )}
                 </td>
 
 
                 <td>
-                    ${escapeHTML(experience.governmentEmployee || "غير محدد")}
+                    ${escapeHTML(
+                        experience.governmentEmployee ||
+                        "غير محدد"
+                    )}
                 </td>
 
 
                 <td>
 
                     <span class="status-badge ${statusClass}">
-                        ${escapeHTML(applicant.status || "غير محدد")}
+                        ${escapeHTML(
+                            applicant.status ||
+                            "غير محدد"
+                        )}
                     </span>
 
                 </td>
@@ -3203,7 +4888,7 @@
 
 
         /* =====================================================
-           RENDER MOBILE CARD
+           MOBILE CARD
         ====================================================== */
 
         function renderMobileCard(
@@ -3520,7 +5205,7 @@
 
 
         /* =====================================================
-           UPDATE SELECTION UI
+           SELECTION UI
         ====================================================== */
 
         function updateSelectionUI() {
@@ -3536,7 +5221,7 @@
 
 
         /* =====================================================
-           FILTER BUTTONS
+           BASIC FILTER BUTTONS
         ====================================================== */
 
         document
@@ -3598,7 +5283,7 @@
 
 
         /* =====================================================
-           SELECT ALL
+           SELECT ALL VISIBLE
         ====================================================== */
 
         selectAllButton.addEventListener(
@@ -3839,12 +5524,6 @@
 
                 }
 
-
-                /*
-                 * المتصفحات قد تمنع فتح عدة نوافذ
-                 * دفعة واحدة، لذلك نفتح الروابط
-                 * بالتتابع بفاصل بسيط.
-                 */
 
                 let index = 0;
 
